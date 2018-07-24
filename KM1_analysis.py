@@ -32,11 +32,14 @@ def nplp2Dfig(df, factor1, factor2, ax):
                  scatteredgecolor = ['xkcd:charcoal'],
                  scatterlinecolor = 'xkcd:charcoal',
                  grouplabel=['NR', 'PR'],
-                 scattersize = 100,
+                 grouplabeloffset=0.1,
+                 barlabels=['Cas', 'Malt', 'Cas', 'Malt'],
+                 barlabeloffset=0.025,
+                 scattersize = 80,
                  ax=ax)
 
 
-metafile = 'C:\\Users\\James Rig\\Documents\\GitHub\KM1\\KM1_metafile.csv'
+metafile = 'C:\\Users\\jaimeHP\\Documents\\GitHub\KM1\\KM1_metafile.csv'
 
 df = pd.read_csv(metafile)
 
@@ -46,6 +49,6 @@ figKM1, ax = plt.subplots(figsize=(3, 4))
 nplp2Dfig(df, 'cs-cas', 'cs-md', ax)
 ax.set_ylabel('Intake (mL)')
 try:
-    figKM1.savefig('C:\\Users\\James Rig\\Dropbox\\AbstractsAndTalks\\180718_SSIB_Florida\\figs\\KM1.eps')
+    figKM1.savefig('C:\\Users\\jaimeHP\\Dropbox\\AbstractsAndTalks\\180718_SSIB_Florida\\figs\\KM1.eps')
 except FileNotFoundError:
     print('File not saved. Cannot find file path.')
